@@ -10,7 +10,7 @@ CSRCS = $(wildcard *.c)
 COBJS = $(CSRCS:.c=.o)
 SSRCS = $(wildcard *.S)
 SOBJS = $(SSRCS:.S=.o)
-RUN_ARGS = -cpu $(CPU) -M raspi3 -kernel $(KERNEL).img -d in_asm
+RUN_ARGS = -cpu $(CPU) -M raspi3 -kernel $(KERNEL).img -serial null -serial stdio
 
 CFLAGS = -Wall -O2 -ffreestanding -nostdinc -nostdlib -mcpu=$(CPU_TYPE)
 
@@ -25,6 +25,7 @@ all: clean $(KERNEL).img
 
 %.o: %.c
 	$(LLVMPATH)/clang --target=aarch64-elf $(CFLAGS) -c $< -o $@
+
 
 $(KERNEL).img: $(SOBJS) $(COBJS)
 	$(LLVMPATH)/ld.lld -m aarch64elf -nostdlib $^ -T $(LINKER) -o $(KERNEL).elf

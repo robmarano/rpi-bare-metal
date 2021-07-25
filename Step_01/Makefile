@@ -15,10 +15,11 @@ kernel8.img: boot.o
 	$(LLVMPATH)/ld.lld -m aarch64elf -nostdlib $^ -T $(LINKER) -o kernel8.elf
 	$(LLVMPATH)/llvm-objcopy -O binary kernel8.elf kernel8.img
 
+.PHONY: clean
 clean:
 	rm kernel8.img kernel8.elf *.o >/dev/null 2>/dev/null || true
 
-run:
+run: clean $(KERNEL).img
 	qemu-system-aarch64 -cpu cortex-a53 -M raspi3 -kernel kernel8.img -d in_asm
 
 

@@ -7,3 +7,5 @@ Read bztscr's tutorial step for [Tutorial 02 - Multicore C](https://github.com/b
 I updated the Makefile to make it more flexible moving forward.
 
 Works like a charm, so far. What do you think?
+
+Next, [Step_03](./Step_03/README.md)

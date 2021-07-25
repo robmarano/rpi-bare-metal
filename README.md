@@ -9,4 +9,5 @@ References
 * [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 [Step 1](./Step_01/README.md)
-Next, [Step 2](./Step_02/README.md)
+[Step 2](./Step_02/README.md)
+Next, [Step 3](./Step_03/README.md)

@@ -14,3 +14,4 @@ We will build the code to run on a virtual rPi using <code>qemu-system-aarch64</
 
 Next to succesfully link the compiled object code to the (virual) hardware, you will need to use the [link.ld](./link.ld) file.
 
+Next, [Step_02](./Step_02/README.md)
